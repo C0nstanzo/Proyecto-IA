@@ -186,10 +186,10 @@ TourResult solve_greedy_one(const InstanceNodes &inst, const UserData &ud) {
         double travel = inst.dist[cur][best];
         double arrive = curTime + travel;
         double startService = max(arrive, inst.tw_start[best]);
-        double wait = max(0.0, inst.tw_start[best] - arrive);
         double finish = startService + inst.service[best];
 
         totalValue += (best < (int)ud.nodeVal.size() ? ud.nodeVal[best] : 0.0);
+
         if (cur < (int)ud.arcVal.size() && best < (int)ud.arcVal.size())
             totalValue += ud.arcVal[cur][best];
 
