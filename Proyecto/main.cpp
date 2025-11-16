@@ -15,9 +15,7 @@ struct UserData {
     vector<vector<double>> arcVal;
 };
 
-// ---------------------------------------------
-// Leer todos los números desde un archivo
-// ---------------------------------------------
+// Lee todos los números del archivo 
 vector<double> read_numbers(const string &path) {
     ifstream f(path);
     vector<double> nums;
@@ -32,15 +30,13 @@ vector<double> read_numbers(const string &path) {
         try {
             nums.push_back(stod(token));
         } catch (...) {
-            // ignora basura
+            // basura
         }
     }
     return nums;
 }
 
-// ---------------------------------------------
-// Parser de archivo nodos (formato corregido)
-// ---------------------------------------------
+// Parser de archivo nodos
 InstanceNodes parse_nodes(const string &path) {
     auto nums = read_numbers(path);
     InstanceNodes inst;
@@ -75,9 +71,7 @@ InstanceNodes parse_nodes(const string &path) {
     return inst;
 }
 
-// ---------------------------------------------
 // Parser archivo de usuarios
-// ---------------------------------------------
 vector<UserData> parse_users(const string &path, int N) {
     auto nums = read_numbers(path);
     vector<UserData> users;
@@ -110,18 +104,14 @@ vector<UserData> parse_users(const string &path, int N) {
     return users;
 }
 
-// ---------------------------------------------
 // Resultado
-// ---------------------------------------------
 struct TourResult {
     double value;
     double timeUsed;
     vector<int> tour;
 };
 
-// ---------------------------------------------
 // Greedy
-// ---------------------------------------------
 TourResult solve_greedy_one(const InstanceNodes &inst, const UserData &ud) {
     int N = inst.N;
     vector<char> visited(N, 0);
@@ -183,9 +173,7 @@ TourResult solve_greedy_one(const InstanceNodes &inst, const UserData &ud) {
     return {totalValue, curTime, tour};
 }
 
-// ---------------------------------------------
 // MAIN
-// ---------------------------------------------
 int main(int argc, char** argv) {
     if (argc < 3) {
         cout << "Uso: solver <archivo_nodos> <archivo_usuarios>\n";
