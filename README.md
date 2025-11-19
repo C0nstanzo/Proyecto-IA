@@ -3,7 +3,7 @@
 ### Estructura del repositorio. 
 - `Entrega 1/` : Material de la primera entrega (LaTeX, referencias).
 - `Presentación 1/` : Recursos para la presentación 1.
-- `Proyecto/` : Código fuente y datos del proyecto.
+- `Proyecto/` : Código fuente y datos del proyecto. \n
       - `main.cpp` : Programa principal en C++.
       - `Makefile` : Reglas de compilación (ver dentro de `Proyecto/`).
 	    - `Instancias/` : Carpetas con archivos de entrada.
