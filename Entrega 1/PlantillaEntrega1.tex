@@ -8,7 +8,6 @@
 \usepackage[top=3cm,bottom=3cm,left=3.5cm,right=3.5cm,footskip=1.5cm,headheight=1.5cm,headsep=.5cm,textheight=3cm]{geometry}
 
 
-
 \begin{document}
 \title{Inteligencia Artificial \\ \begin{Large}Estado del Arte: Problema Enhanced Profitable Tour Problem\end{Large}}
 \author{Muryel Constanzo}
@@ -31,7 +30,8 @@ Bibliograf\'ia (5\%): & \underline{\hspace{2cm}}\\
 \textbf{Nota Final (100\%)}:   & \underline{\hspace{2cm}}
 \end{tabular}
 %---------------------------------------------------------------------------%
-\vspace{2cm}
+% REDUCCI\'oN DE ESPACIO AQU\'i: De 2cm a 0.5cm
+\vspace{0.5cm}
 
 
 \begin{abstract}
@@ -39,13 +39,14 @@ Bibliograf\'ia (5\%): & \underline{\hspace{2cm}}\\
 \end{abstract}
 
 \section{Introducci\'on}
-    El Enhanced Profitable Tour Problem (EPTP) representa un reto esencial en el \'ambito de la optimizaci\'on combinatoria y la inteligencia artificial, con aplicaciones directas en \'areas clave como la log\'istica de distribuci\'on, el enrutamiento de veh\'iculos y la organizaci\'on de itinerarios tur\'isticos. A diferencia del cl\'asico problema del vendedor viajero, en el que es necesario visitar todas las localidades, el EPTP incluye decisiones de selecci\'on que fijan qu\'e subconjunto de clientes visitar para maximizar la ganancia neta, equilibrando las ganancias de las visitas con los costos de desplazamiento. Esta naturaleza dual de selecci\'on y secuenciaci\'on eleva notablemente la complejidad computacional del problema, catalog\'andolo como NP-dif\'icil e impulsando la creaci\'on de m\'etodos especializados para su soluci\'on.
-    
-    El objetivo de este documento es ofrecer un an\'alisis completo del estado del arte en t\'ecnicas de resoluci\'on para el EPTP, se\~{n}alando los enfoques metodol\'ogicos m\'as significativos, sus fundamentos te\'oricos, as\'i como sus capacidades y restricciones. Se pretende proporcionar una perspectiva hol\'istica que facilite el entendimiento de la evoluci\'on hist\'orica del asunto, las t\'acticas de soluci\'on elaboradas y las tendencias que se han investigado actualmente. El aporte clave de este estudio se centra en la revisi\'on cr\'itica de las t\'ecnicas disponibles, la comparaci\'on de su efectividad seg\'un caracter\'isticas por caso y la formulaci\'on de directrices para las futuras investigaciones que puedan superar las limitaciones actuales, mejorando la aplicabilidad practica de las soluciones. 
-    
-    La raz\'on para llevar a cabo este estudio se basa en la creciente importancia del EPTP en entornos industriales donde los recursos son escasos y no es viable econ\'omicamente satisfacer todas las peticiones de servicio existentes. En la \'epoca de la optimizaci\'on de recursos y la sostenibilidad operativa, las organizaciones necesitan herramientas inform\'aticas que les ayuden a decidir qu\'e clientes atender y en qu\'e orden, maximizando la rentabilidad y cumpliendo con restricciones operativas como capacidades de veh\'iculos, ventanas de tiempo y l\'imites presupuestarios. La creaci\'on de algoritmos eficaces para el EPTP no solo tiene un inter\'es te\'orico en el \'ambito de la inform\'atica, sino que tambi\'en influye directamente en la efectividad operativa de diversas industrias, lo que valida la importancia de este an\'alisis en el campo de la inteligencia artificial aplicada.
-    
-    La organizaci\'on del trabajo es la siguiente: La Secci\'on 2 presenta formalmente el problema y su planteamiento, se da cuenta de las variables de decisi\'on, restricciones, objetivo a cumplir las variantes que se conocen; La Secci\'on 3 expone el estado de la cuesti\'on en el que se revisa la historia del problema y se clasifican los m\'etodos de soluci\'on en exactos, heur\'isticos y metaheur\'isticos, se analizan las distintas representaciones que existen, se presentan algoritmos que han mostrado ser muy efectivos y se discuten las tendencias actuales de investigaci\'on; La Secci\'on 4 presenta la formulaci\'on matem\'atica rigurosa del problema, se establecen par\'ametros, variables, la funci\'on objetivo y restricciones a cumplir y se caracteriza el espacio de b\'usqueda en el cual la meta de la investigaci\'on es la resoluci\'on de un determinado problema; por \'ultimo, La Secci\'on 5 sintetiza las conclusiones de la investigaci\'on, respuestas a interrogantes sobre si son unificables las t\'ecnicas o no, cu\'ales son sus similitudes y diferencias, si son aplicables o no a la PBC, las limitaciones del an\'alisis, cu\'ales son las estrategias que presentan buena esperanza final y cu\'al ser\'a el futuro concepto de investigaci\'on en el an\'alisis de la PBC.
+El Enhanced Profitable Tour Problem (EPTP) constituye un desaf\'io central en optimizaci\'on combinatoria e inteligencia artificial, con aplicaciones en log\'istica, enrutamiento de veh\'iculos y planificaci\'on de itinerarios. A diferencia del problema del vendedor viajero, donde deben visitarse todas las localidades, el EPTP incorpora decisiones de selecci\'on que determinan qu\'e clientes visitar para maximizar la ganancia neta, equilibrando beneficios y costos de desplazamiento. Esta combinaci\'on de selecci\'on y secuenciaci\'on incrementa su complejidad, catalog\'andolo como NP-dif\'icil y motivando el desarrollo de t\'ecnicas especializadas.
+
+El objetivo de este documento es presentar un an\'alisis conciso y completo del estado del arte en m\'etodos de resoluci\'on para el EPTP, destacando los enfoques m\'as relevantes, sus fundamentos te\'oricos, capacidades y limitaciones. Se ofrece una perspectiva integral de la evoluci\'on del problema, las estrategias de soluci\'on propuestas y las tendencias actuales. El aporte central consiste en revisar cr\'iticamente las t\'ecnicas existentes, comparar su rendimiento seg\'un caracter\'isticas del caso y sugerir directrices para futuras investigaciones orientadas a mejorar su aplicabilidad.
+
+La motivaci\'on de este estudio surge de la creciente relevancia del EPTP en contextos industriales donde los recursos son limitados y no es viable atender todas las solicitudes. En escenarios que exigen eficiencia y sostenibilidad, es necesario decidir qu\'e clientes visitar y en qu\'e orden, maximizando la rentabilidad bajo restricciones como capacidades, ventanas de tiempo y presupuestos. El desarrollo de algoritmos eficaces tiene impacto tanto te\'orico como pr\'actico, reforzando la importancia de este an\'alisis en inteligencia artificial aplicada.
+
+La organizaci\'on del documento es la siguiente: la Secci\'on~2 presenta formalmente el problema, sus variables, restricciones y variantes; la Secci\'on~3 revisa el estado de la cuesti\'on, clasificando m\'etodos en exactos, heur\'isticos y metaheur\'isticos, analizando representaciones, algoritmos destacados y tendencias de investigaci\'on; la Secci\'on~4 entrega la formulaci\'on matem\'atica rigurosa del problema y caracteriza el espacio de b\'usqueda; finalmente, la Secci\'on~5 sintetiza las conclusiones, evaluando la unificaci\'on de t\'ecnicas, su aplicabilidad a la PBC, limitaciones del an\'alisis y proyecciones de investigaci\'on.
+
 
 
 \section{Definici\'on del Problema}
@@ -53,48 +54,41 @@ Bibliograf\'ia (5\%): & \underline{\hspace{2cm}}\\
     
     EPTP tiene como finalidad determinar una ruta que pase por un subconjunto de clientes, maximizando la diferencia entre el beneficio obtenido gracias a las visitas realizadas y el costo del trayecto, es decir, maximizando la ganancia obtenida~\cite{archetti2009capacitated}.
 
-    \subsection{Naturaleza y Contexto}
+    \paragraph{Naturaleza y Contexto.}
         Se propone en las situaciones donde no es necesario ni obligatorio pasar por todas las localizaciones viables, lo que lo diferencia del cl\'asico TSP~\cite{dasari2021multi}. Cada localizaci\'on a visitar cuenta con un beneficio asociado, obtenible al haberse visitado dicha localizaci\'on; por otro lado, el desplazamiento entre las distintas localizaciones genera costos que son proporcionales a las distancias recorridas~\cite{zhang2017probabilistic}.
-
         El EPTP utiliza esta estructura b\'asica y la extiende, incorporando adem\'as restricciones adicionales y caracter\'isticas espec\'ificas que aumentan la complejidad y el realismo del modelo. Entre estas se consideran capacidades de localizaciones, ventanas de tiempo, m\'ultiples veh\'iculos o la incertidumbre sobre la disponibilidad de las localizaciones~\cite{archetti2009capacitated}.
 
-    \subsection{Dificultades Asociadas al Problema}
+    \paragraph{Dificultades Asociadas al Problema.}
         EPTP pertenece a la clase de problemas NP-dif\'iciles, esto implica que no hay algoritmos conocidos que puedan resolver todas las instancias del trayecto en tiempo polinomial~\cite{feillet2005traveling}.
-
         Debido a la naturaleza combinatoria del problema, donde la cantidad de soluciones factibles para su resoluci\'on crece de forma exponencial conforme aumenta el n\'umero de localizaciones disponibles, la complejidad computacional tambi\'en se intensifica. Adem\'as la necesidad de mantener balanceado simult\'aneamente dos objetivos contrapuestos, es decir, la maximizaci\'on de beneficios por visitas mientras se minimizan los costos de desplazamiento, genera un espacio de b\'usqueda complejo, con m\'ultiples \'optimos locales, que no hacen m\'as que dificultar la identificaci\'on de una soluci\'on \'optima global~\cite{dasari2021multi}.
 
-    \subsection{Variables del Problema}
+    \paragraph{Variables del Problema.}
         Para EPTP las variables de decisi\'on incluyen estructuraci\'on en dos niveles, complementarios entre ellos. 
-
         Primero se tienen las variables de selecci\'on, que determinan las localizaciones que ser\'an incluidas en el tour y cu\'ales ser\'an omitidas. En segundo lugar est\'an las variables de secuenciamiento, aquellas que establecen el orden espec\'ifico en el que las localizaciones ser\'an visitadas~\cite{archetti2009capacitated}.
-
         Entre los par\'arametros del problema se incluyen:
-        \begin{itemize}
+        \begin{itemize} \setlength{\itemsep}{0pt} \setlength{\parskip}{0pt}
             \item El conjunto de localizaciones posibles, con cada una caracterizada por su beneficio individual.
             \item La matriz de costos de desplazamiento entre cada par de puntos de localizaci\'on.
             \item Los puntos de partida y retorno del viaje.
         \end{itemize}
-
         Dependiendo de la variante espec\'ifica del problema, tambi\'en se encuentran las capacidades de carga, l\'imites temporales, n\'umero de veh\'iculos disponibles o incluso las probabilidades de disponibilidad de cada localizaci\'on~\cite{sun2018time}.
 
-     \subsection{Restricciones del Problema}
+     \paragraph{Restricciones del Problema.}
         Las restricciones del problema aseguran la factibilidad de las soluciones. La restricci\'on principal establece que el viaje debe formar un ciclo cerrado, de forma que el viaje tenga su inicio y fin en la misma localizaci\'on~\cite{feillet2005traveling}.
-
         Cada localizaci\'on puede ser visitada como m\'aximo una vez a lo largo de todo el recorrido, evitando repeticiones innecesarias. En los casos en los que se consideran ventanas de tiempo, las visitas deben ser realizadas dentro de los intervalos temporales espec\'ificos que se encuentran asociados a cada localizacic\'on de forma espec\'ifica y en versiones que cuenten con m\'ultiples veh\'iculos, se imponen restricciones respecto a la cantidad de viajes que se pueden realizar de forma simult\'anea~\cite{zhang2017probabilistic}.
 
-    \subsection{Objetivos del Problema}
+    \paragraph{Objetivos del Problema.}
         El objetivo primordial del EPTP es la maximizaci\'on de la ganancia total neta, que se encuentra definida como la diferencia entre los beneficios totales que fueron recolectados al visitar alguna localidad seleccionada y los costos totales incurridos en el desplazamiento durante el viaje~\cite{feillet2005traveling}. 
-
         La funci\'on objetivo mencionada refleja la decisi\'on econ\'omica, donde se debe buscar un equilibrio \'optimo entre la expansi\'on del viaje para obtener m\'as beneficios y el mantenerlo compacto para as\'i minimizar los costos de transporte~\cite{dasari2021multi}. Para algunas formulaciones de este problema se pueden tener objetivos secundarios o incluso criterios adicionales, tales como:
-        \begin{itemize}
+        \begin{itemize} \setlength{\itemsep}{0pt} \setlength{\parskip}{0pt}
             \item Minimizar el tiempo total del viaje.
             \item Balancear la carga entre m\'ultiples veh\'iculos.
             \item Maximizar la cantidad de localizaciones atendidas, sujeto a restricciones de ganancia.
         \end{itemize}
 
-    \subsection{Variantes Conocidas del Problema}
+    \paragraph{Variantes Conocidas del Problema.}
         El EPTP se deriva y relaciona con m\'ultplies variantes ya documentadas.
-        \begin{itemize}
+        \begin{itemize} \setlength{\itemsep}{0pt} \setlength{\parskip}{0pt}
             \item \textbf{Capacitated Profitable Tour Problem (CPTP):}incluye restricciones de capacidad vehicular, en donde cada localizaci\'on posee adem\'as una demanda espec\'ifica y el veh\'iculo tiene una capacidad limitada~\cite{archetti2009capacitated}.
             \item \textbf{Profitable Arc Tour Problem:} trabaja con la asociaci\'on de los beneficios a los arcos de la red en lugar de los v\'ertices, lo que modifica considerablemente la estructura conocida del modelo.
             \item \textbf{Team Orienteering Problem (TOP):} considera m\'ultiples veh\'iculos que trabajan bajo un l\'imite de tiempo, buscando maximizar el beneficio total recolectado sujeto a dichas restricciones temporales~\cite{archetti2009capacitated}.
@@ -105,7 +99,7 @@ Bibliograf\'ia (5\%): & \underline{\hspace{2cm}}\\
 
 
 \section{Estado del Arte}
-    El problema Profitable Tour Problem nace como la generalizaci\'on natural del problema cl\'asico Traveling Salesman Problem (TSP), cuyas primeras formulaciones matem\'aticas existen alrededor del 1930~\cite{lawler1985traveling}. Sin embargo, el concepto formal de los problemas de ruteo con selecci\'on de v\'ertices y beneficios asociados no surge sino hasta la d\'ecada de 1980, cuando los investigadores comenzaron a	estudiar situaciones en las que no era econ\'omicamente viable visitar todas las localizaciones disponibles~\cite{balas1989prize}.
+    El problema Profitable Tour Problem nace como la generalizaci\'on natural del problema cl\'asico Traveling Salesman Problem (TSP), cuyas primeras formulaciones matem\'aticas existen alrededor del 1930~\cite{lawler1985traveling}. Sin embargo, el concepto formal de los problemas de ruteo con selecci\'on de v\'ertices y beneficios asociados no surge sino hasta la d\'ecada de 1980, cuando los investigadores comenzaron a  estudiar situaciones en las que no era econ\'omicamente viable visitar todas las localizaciones disponibles~\cite{balas1989prize}.
     
     EPTP fue consolidado formalmente a la literatura acad\'emica alrededor del 1990, cuando se introdujo el Prize-Collecting Traveling Salesman Problem~\cite{dell1995prize}, problema en el que se establecieron las bases te\'oricas para esta gran familia de problemas. 
     
@@ -116,67 +110,58 @@ Bibliograf\'ia (5\%): & \underline{\hspace{2cm}}\\
     \subsection{M\'etodos de Soluci\'on Desarrolados}
         La resoluci\'on del modelo EPTP ha sido abordada en tres categor\'ias principales, las t\'ecnicas exactas, algoritmos heur\'isticos constructivos y las metaheur\'isticas de b\'usqueda local.
 
-        \subsubsection{M\'etodos Exactos}
+        \textbf{M\'etodos Exactos: }
             El tipo de m\'etodo exacto asegura la obtenci\'on de soluciones optimas aun cuando enfrentan limitaciones computacionales significativas debido a la naturaleza NP-dif\'icil del problema inicial. La programaci\'on lineal entera da un enfoque m\'as fundamental, en donde el problema se formula mediante el uso de variables binarias, estas variables indican la selecci\'on de v\'ertices y arcos, estando sujetas a restricciones de conectividad, adem\'as de la capacidad de eliminaci\'on de subciclos~\cite{archetti2009capacitated}. Las formulaciones con base en los flujos y en conjuntos de cortes m\'inimos tienden a ser particularmente efectivas para las instancias cuyo tama\~{n}o es moderado~\cite{feillet2005traveling}.
             
             Se tiene tambi\'en que los algoritmos de ramificaci\'on y acotamiento o branch-and-bound han sido utilizados exitosamente, al incorporar t\'ecnicas de relajaci\'on lineal, de forma que obtienen cotas superiores e inferiores, permitiendo la poda del \'arbol de b\'usqueda~\cite{dell1995prize}. Por otro lado, enfoques m\'as sofisticados como la ramificaci\'on de corte y precio o branch-cut-and-price, han permitido la resoluci\'on de instancias con hasta 500 v\'ertices, debido a que combinan generaci\'on din\'amica de columnas con planos de corte validos~\cite{archetti2009capacitated}. 
 
-        \subsubsection{Heur\'isticas Constructivas}
+        \textbf{Heur\'isticas Constructivas: }
             Las heur\'isticas constructivas generan soluciones factibles a trav\'es de procedimientos determin\'isticos, agregando iterativamente elementos al viaje. La heur\'istica del vecino m\'as cercano selecciona en cada paso el v\'ertice no visitado que maximiza la relaci\'on entre el beneficio del v\'ertice y el costo asociado al agregarlo al tour~\cite{feillet2005traveling}. Este tipo de enfoque, conocido como greedy, otorga soluciones iniciales de una calidad aceptable, considerando bajo costo computacional.
             
             Por otro lado, las heur\'isticas de inserci\'on realizan la evaluaci\'on sistem\'aticamente de la incorporaci\'on de v\'ertices en posiciones espec\'ificas, eligiendo siempre aquellas que maximicen el incremento neto de la ganancia~\cite{archetti2009capacitated}. Algunas variantes m\'as sofisticadas tienen en cuenta criterios de inserci\'on que buscan el balance de la ganancia inmediata con el impacto que generan las futuras inserciones, evitando la toma de decisiones miopes que puedan conducir a \'optimos locales de baja calidad. 
 
-        \subsubsection{Metaheur\'isiticas}
+        \textbf{Metaheur\'isiticas: }
             Las metaheur\'isticas dan un enfoque de mayor \'exitos para las instancias de gran escala del EPTP, ya que ofrecen un equilibrio favorable entre la calidad de la soluci\'on y la eficiencia computacional. La b\'usqueda tab\'u, o Tabu Search, ha demostrado resultados destacables, debido al empleo de estructuras de memoria tanto a corto como a largo plazo, guiando la exploraci\'on del espacio de soluciones~\cite{taillard1997tabu}. Los movimientos en la vecindad t\'ipicamente empleados vienen con operadores de intercambio de v\'ertices (swap), reubicaci\'on de v\'ertices (relocate), inversi\'on de segmentos (2-opt) y operadores de selecci\'on que agregan o eliminan los v\'ertices del viaje~\cite{archetti2009capacitated}.
             
             Los algoritmos gen\'eticos o GA, codifican sus soluciones mediante la permutaci\'on, lo que representa el orden de visita, incorporando operadores de cruce que se especializan en un tema, como el order crossover (OX) y el partially mapped crossover (PMX), que preservan caracter\'isticas estructurales de los viajes~\cite{zhang2017probabilistic} La mutaci\'on es implementada mediante los operadores de perturbaci\'on, que modifican la secuencia y la selecci\'on de v\'ertices por igual~\cite{dasari2021multi}.
 
     \subsection{Representaciones del Problema}
-        Los algoritmos de soluci\'on tienen una efectividad fuertemente influenciada por la representaci\'on que fue empleada para la codificaci\'on de las soluciones del EPTP.
+        Los algoritmos de soluci\'on se ven influenciados por la representaci\'on empleada para codificar las soluciones del EPTP.
         
-        \subsubsection{Representaci\'on por Permutaciones}
-            La representaci\'on por permutaciones codifica la soluci\'on como si se tratase de una secuencia ordenada de identificadores para los v\'ertices, en donde la posici\'on que tienen en la secuencia determina directamente el orden de visita~\cite{dasari2021multi}. Esta representaci\'on es natural y termina siendo computacionalmente eficiente, permitiendo la aplicaci\'on directa de los operadores de cruce. Aun cuando presenta limitaciones a la hora de modelar expl\'icitamente la decisi\'on respecto a la selecci\'on de v\'ertices, ya que requiere mecanismos adicionales que determinan qu\'e v\'ertices son visitados realmente. 
-        \subsubsection{Representaci\'on Binaria}
-            En la representaci\'on binaria se emplea un vector de variables binarias, en donde cada componente indica si el v\'ertice en espec\'ifico ser\'a incluido en el viaje o no, complementado con la informaci\'on de secuenciamiento~\cite{archetti2009capacitated}. Esta forma de codificar facilita la modelaci\'on de restricciones de capacitas, permitiendo la implementaci\'on de operadores gen\'eticos que modifican la composici\'on. 
-            
-            Su principal desventaja radica en que necesita de procedimientos de reparaci\'on cuando los operadores generan soluciones infactibles. 
-        \subsubsection{Representaci\'on por Lista de Arcos}
-            Esta forma de representar muestra una soluci\'on como el conjunto de arcos, siendo adecuada para formular programaci\'on matem\'atica y algoritmos de colonia de hormigas~\cite{ke2008ants}. La representaci\'on como tal facilita la verificaci\'on de la factibilidad mediante el an\'alisis de conectividad del grafo, aunque produce un incremento en la complejidad de implementaci\'on para ciertos operadores de b\'usqueda local.
-            
-            Se ha demostrado que representar por permutaciones es m\'as efectivo en la pr\'actica, principalmente cuando se combinan procedimientos de decodificaci\'on inteligentes que determinan de forma din\'amica la selecci\'on optima de v\'ertices dada una secuencia especifica~\cite{dasari2021multi}.
-
-    \subsection{Algoritmos m\'as Eficaces}
-        Al realizar un an\'alisis comparativo de resultados se identifica claramente un enfoque que ha demostrado mayor efectividad.
+        \paragraph{Representaci\'on por Permutaciones.}
+        La soluci\'on se codifica como una secuencia ordenada de identificadores de v\'ertices, donde la posici\'on determina el orden de visita~\cite{dasari2021multi}. Es una representaci\'on natural y eficiente, que facilita el uso de operadores de cruce, aunque requiere mecanismos adicionales para modelar la selecci\'on efectiva de v\'ertices.
         
-        Para aquellas instancias que tienen un tama\~{n}o peque\~{n}o a moderado, los m\'etodos basados en Branch-cut-and-price representan el estado del arte, debido a que son capaces de garantizar optimalidad en los tiempos computacionales~\cite{archetti2009capacitated}. La implementaci\'on de Archetti et al.~\cite{archetti2009capacitated} para el Capacitated Profitable Tour Problem termino resolviendo a optimalidad instancias con hasta 150 v\'ertices en menos de una hora. 
+        \paragraph{Representaci\'on Binaria.}
+        Esta representaci\'on utiliza un vector de variables binarias que indica si cada v\'ertice ser\'a incluido, complementado con informaci\'on de secuenciamiento~\cite{archetti2009capacitated}. Permite modelar con facilidad restricciones de capacidad y aplicar operadores gen\'eticos, pero suele requerir procedimientos de reparaci\'on para recuperar la factibilidad.
         
-        Para instancias con una escala mucho mayor, los algoritmos h\'ibridos, que combinan metaheur\'isticas poblacionales con b\'usqueda local intensiva, demostraron ser superiores. Se desarrollo un algoritmo multi-inicio (Multi-Start Heuristic)~\cite{dasari2021multi} que hace uso de heur\'isticas aleatorias, seguida de una b\'usqueda tab\'u, dando lugar a soluciones con espacios de optimalidad inferiores al 2\% para las instancias con alrededor de 500 v\'ertices.~\cite{zhang2017probabilistic} propuso un algoritmo gen\'etico hibrido con b\'usqueda local basada en Lin-Kernighan para el PTP, lo que supero en calidad a las metaheur\'isticas puras en el 95\% de las instancias probadas~\cite{zhang2017probabilistic}.
+        \paragraph{Representaci\'on por Lista de Arcos.}
+        La soluci\'on se expresa como un conjunto de arcos, siendo especialmente adecuada para programaci\'on matem\'atica y algoritmos de colonia de hormigas~\cite{ke2008ants}. Esta estructura facilita la verificaci\'on de factibilidad mediante conectividad, aunque complica ciertos operadores de b\'usqueda local. En la pr\'actica, las permutaciones resultan m\'as efectivas cuando se combinan con decodificadores que seleccionan din\'amicamente los v\'ertices a visitar~\cite{dasari2021multi}.
         
-        Los algoritmos de optimizaci\'on por enjambre PSO adaptados al problema discreto han mostrado resultados competitivos, principalmente cuando se hacen h\'ibridos en conjunto con b\'usqueda local~\cite{sun2018time}. La VNS por otro lado, surge como un enfoque m\'as robusto, empleando estructuras de complejidad creciente que buscan un escape sistem\'atico de \'optimos locales~\cite{archetti2009capacitated}.
+        \subsection{Algoritmos m\'as Eficaces}
+        El an\'alisis comparativo evidencia enfoques especialmente efectivos seg\'un el tama\~{n}o del problema.
+        Para instancias peque\~{n}as o moderadas, los m\'etodos \textit{Branch-cut-and-price} representan el estado del arte, ya que garantizan optimalidad en tiempos razonables~\cite{archetti2009capacitated}. La implementaci\'on de Archetti et al.~\cite{archetti2009capacitated} resolvi\'o instancias de hasta 150 v\'ertices en menos de una hora.
         
-    \subsection{Tendencias Actuales}
-        La actual investigaci\'on del modelo tratado se caracteriza por cuatro tendencias principales:
-        \subsubsection{Integraci\'on de Aprendizaje Autom\'atico}
-            Tendencia que incorpora t\'ecnicas de aprendizaje autom\'atico con el fin de mejorar la funci\'on de los algoritmos de optimizaci\'on. Cuenta con enfoques reinforcement learning, siendo estos explorados para entrenar pol\'iticas de decisi\'on. 
-        \subsubsection{Optimizaci\'on Robusta y Estoc\'astica}
-            Reconocen varios escenarios reales que involucran la duda en par\'ametros como beneficios, costos o disponibilidad de v\'ertices. La investigaci\'on m\'as reciente se enfoca en las formulaciones del problema~\cite{zhang2017probabilistic}, buscando soluciones que mantengan factibilidad y calidad aceptable bajo diversos escenarios. 
-        \subsubsection{Paralelizaci\'on y Computaci\'on de Alto Rendimiento}
-            El crecimiento de la disponibilidad de recursos computacionales motiva el desarrollo de implementaciones paralelas para el EPTP. Los algoritmos en paralelo utilizan m\'ultiples poblaciones que tienen evoluci\'on constante, contando adem\'as con una migraci\'on peri\'odica de individuos, lo que mejora la diversidad y acelera la convergencia~\cite{dasari2021multi}. 
-            
-            La paralelizaci\'on de evaluaciones para las vecindades en b\'usquedas de car\'acter local permite la exploraci\'on de regiones de mayor amplitud en el espacio de soluciones en tiempos comparables a implementaciones secuenciales. 
-        \subsubsection{Problemas Multiobjetivo}
-            La formulaci\'on multiobjetivo del problema, donde se busca optimizar de forma simult\'anea varios criterios, como la ganancia neta, longitud del viaje, balance de la carga o equidad, ha sido foco de atenci\'on~\cite{jozefowiez2008multi}.
-            
-            Los algoritmos multiobjetivo como NSGA-II y MOEA/D se adaptan al problema en cuesti\'on, lo que genera aproximaciones al frete de Pareto, lo que ofrece m\'ultiples opciones de compromiso entre las que se puede decidir. Esta perspectiva termina siendo particularmente importante en aquellas aplicaciones donde los diferentes stakeholders priorizan objetivos distintos. 
-            
-            Las limitaciones de t\'ecnicas actuales cuentan con la dificultad de escalar a instancias con cerca de miles de v\'ertices, manteniendo las garant\'ias de calidad, la sensibilidad de las metaheur\'isticas a la configuraci\'on de par\'ametros y la ausencia de m\'etodos sistem\'aticos para la explotaci\'on de informaci\'on hist\'orica de problemas previamente resueltos. 
-            
-            Las futuras investigaciones se orientan al desarrollo de algoritmos que tengan una mejor capacidad de adaptaci\'on, la integraci\'on efectiva de conocimientos experto del dominio y la consideraci\'on de aquellos aspectos din\'amicos en los que le problema evoluciona de forma temporal requiriendo una re-optimizaci\'on continua. 
+        Para escalas mayores, los algoritmos h\'ibridos que combinan metaheur\'isticas poblacionales con b\'usqueda local intensiva muestran mejor rendimiento. Un esquema \textit{Multi-Start}~\cite{dasari2021multi} con heur\'isticas aleatorias y b\'usqueda tab\'u alcanz\'o desviaciones menores al 2\% en instancias de 500 v\'ertices. Por su parte, Zhang~\cite{zhang2017probabilistic} propuso un algoritmo gen\'etico h\'ibrido basado en Lin-Kernighan que super\'o a metaheur\'isticas puras en el 95\% de las instancias.
         
-    
+        Los PSO discretos logran resultados competitivos, especialmente en versiones h\'ibridas con b\'usqueda local~\cite{sun2018time}. La VNS, en cambio, destaca por su robustez, gracias al uso de vecindades crecientes que permiten escapar sistem\'aticamente de \'optimos locales~\cite{archetti2009capacitated}.
+        
+        \subsection{Tendencias Actuales}
+        La investigaci\'on reciente del EPTP se concentra en cuatro l\'ineas principales:
+        
+        \paragraph{Integraci\'on de Aprendizaje Autom\'atico.}
+        Se incorporan t\'ecnicas de aprendizaje, especialmente \textit{reinforcement learning}, para mejorar la toma de decisiones dentro de los algoritmos de optimizaci\'on.
+        
+        \paragraph{Optimizaci\'on Robusta y Estoc\'astica.}
+        Se consideran escenarios con incertidumbre en beneficios, costos o disponibilidad~\cite{zhang2017probabilistic}, buscando soluciones que mantengan calidad y factibilidad frente a variaciones de par\'ametros.
+        
+        \paragraph{Paralelizaci\'on y Computaci\'on de Alto Rendimiento.}
+        El acceso a mayor capacidad computacional impulsa implementaciones paralelas basadas en poblaciones m\'ultiples con migraci\'on peri\'odica~\cite{dasari2021multi}, mejorando diversidad y convergencia. La paralelizaci\'on de vecindades acelera b\'usquedas locales y permite explorar regiones m\'as amplias del espacio de soluciones.
+        
+        \paragraph{Problemas Multiobjetivo.}
+        Las variantes multiobjetivo del problema buscan equilibrar criterios como ganancia, distancia o equidad~\cite{jozefowiez2008multi}. Algoritmos como NSGA-II y MOEA/D generan aproximaciones al frente de Pareto, ofreciendo alternativas de compromiso relevantes para aplicaciones con distintos \textit{stakeholders}. Persisten desaf\'ios como la escalabilidad a miles de v\'ertices, la sensibilidad a par\'ametros y la falta de mecanismos sistem\'aticos para aprovechar informaci\'on hist\'orica. Las investigaciones futuras apuntan a algoritmos m\'as adaptativos, integraci\'on efectiva de conocimiento experto y enfoques capaces de manejar escenarios din\'amicos con re-optimizaci\'on continua.
     
 \section{Modelo Matem\'atico}
-    Se presenta la formulaci\'on matem\'atica para el Enhanced Profitable Tour Problem con m\'ultiples usuarios y la existencia de ventanas de tiempo, utilizando como base las formulaciones cl\'asicas del problema de ruteo con beneficios~\cite{archetti2009capacitated, sun2018time}, siendo extendida para la incorporaci\'on de las caracter\'isticas espec\'ificas del problema en estudio. 
+    Formulaci\'on matem\'atica para el Enhanced Profitable Tour Problem con m\'ultiples usuarios y la existencia de ventanas de tiempo, utilizando como base las formulaciones cl\'asicas del problema de ruteo con beneficios~\cite{archetti2009capacitated, sun2018time}, extendida para las caracter\'isticas espec\'ificas del problema.
     
     \subsection{Par\'ametros y Conjuntos}
         El problema se define como un grafo dirigido $G = (V, A)$ donde $V = \{1, 2, \ldots, n\}$ representa el conjunto de $n$ nodos disponibles, y $A \subseteq V \times V$ define el conjunto de arcos dirigidos que conectan los pares de nodos. 
@@ -220,130 +205,108 @@ Bibliograf\'ia (5\%): & \underline{\hspace{2cm}}\\
         \end{equation}
         
         La funci\'on objetivo suma dos componentes:
-        \begin{itemize}
+        \begin{itemize} \setlength{\itemsep}{0pt} \setlength{\parskip}{0pt}
             \item El primer t\'ermino $\sum_{i \in V} s_{ik} \cdot y_{ik}$ cuantifica el beneficio total obtenido por el usuario $k$ al visitar el nodo seleccionado, en donde cada nodo ($y_{ik} = 1$) contribuye a la valorizaci\'on especifica $s_{ik}$.
             \item El segundo t\'ermino $\sum_{(i,j) \in A} c_{ijk} \cdot x_{ijk}$ indica el costo total de desplazamiento incurrido, de esta forma, carda arco utilizado resta su costo asociado $c_{ijk}$ (t\'ipicamente negativo).
         \end{itemize}
         La sumatoria externa agrega las valorizaciones netas individuales de todos los usuarios, obteniendo as\'i la valorizaci\'on global del sistema.
         
     \subsection{Restricciones}
-        El modelo incorpora las siguientes restricciones que ayudan a garantizar la factibilidad de las soluciones.
-        
-        \subsubsection{Restricciones de Inicio y T\'ermino}
-        
+        \paragraph{Restricciones de Inicio y T\'ermino.}
             \begin{align}
             \sum_{j \in V: (1,j) \in A} x_{1jk} &= 1 \quad \forall k \in U \label{eq:start}\\
             \sum_{i \in V: (i,1) \in A} x_{i1k} &= 1 \quad \forall k \in U \label{eq:end}\\
             y_{1k} &= 1 \quad \forall k \in U \label{eq:depot_visit}
             \end{align}
-            
             Las restricciones (\ref{eq:start}) y (\ref{eq:end}) garantizan que cada usuario $k$ inicie saliendo exactamente de un arco desde el nodo 1 y tanga su retorno exactamente al mismo nodo.
-            
             La restricci\'on (\ref{eq:depot_visit}) establece que el inicio es obligatoriamente visitado por todos los usuarios, de esta forma se asegura que cada viaje forme un ciclo cerrado con origen y destino en el nodo 1. 
             
-        \subsubsection{Restricciones de Conservaci\'on de Flujo}
-        
+        \paragraph{Restricciones de Conservaci\'on de Flujo.}
             \begin{equation}
             \sum_{j \in V: (i,j) \in A} x_{ijk} = \sum_{j \in V: (j,i) \in A} x_{jik} = y_{ik} \quad \forall i \in V, \, k \in U \label{eq:flow}
             \end{equation}
-            
             La restricci\'on (\ref{eq:flow}) indica la conservaci\'on de flujo en cada nodo para cada usuario. As\'i, si el nodo $i$ es visitado por el usuario $k$ ($y_{ik} = 1$), entonces debe existir exactamente un arco entrante y exactamente un arco saliente.
-            
             Por otro lado, si el nodo no es visitado ($y_{ik} = 0$), entonces no debe existir ning\'un arco entrante ni saliente asociado al usuario $k$ en ese nodo. 
             Con estas restricciones se busca garantizar la conectividad del viaje y la consistencia entre las variables de elecci\'on y las de secuenciamiento.
             
-        \subsubsection{Restricciones de Visita \'unica}
-        
+        \paragraph{Restricciones de Visita \'unica.}
             \begin{equation}
             \sum_{k \in U} y_{ik} \leq 1 \quad \forall i \in V \setminus \{1\} \label{eq:unique_visit}
             \end{equation}
-            
             La restricci\'on (\ref{eq:unique_visit}) establece que cada uno de los nodos puede ser visitado por a lo m\'as un usuario. Esta restricci\'on en particular modela aquellas situaciones en las que los recursos para cada localizaci\'on son limitados o en donde m\'ultiples visitas no son permitidas. 
-            
             El nodo inicial se excluye debido que todos los usuarios deben obligatoriamente visitarlo como punto de inicio y de finalizaci\'on. 
             
-        \subsubsection{Restricciones de Ventanas de Tiempo}
-            
+        \paragraph{Restricciones de Ventanas de Tiempo.}
             \begin{align}
             w_{ik} &\geq e_i \cdot y_{ik} \quad \forall i \in V, \, k \in U \label{eq:tw_early}\\
             w_{ik} &\leq l_i \cdot y_{ik} + M(1 - y_{ik}) \quad \forall i \in V, \, k \in U \label{eq:tw_late}
             \end{align}
-            
             Las restricciones (\ref{eq:tw_early}) y (\ref{eq:tw_late}) establecen que, si el usuario $k$ visita el nodo $i$ ($y_{ik} = 1$), el inicio del servicio $w_{ik}$ debe realizarse dentro de la ventana de tiempo $[e_i, l_i]$ que corresponde al nodo. En caso de que el usuario llegue antes de $e_i$, este debe esperar hasta ese momento para comenzar. Por el contrario, si ocurre despu\'es de $l_i$, el nodo no podr\'a ser visitado. 
-            
             El par\'ametro $M$ presente en (\ref{eq:tw_late}) corresponde a una constante suficientemente grande (big-M), utilizada para desactivar la restricci\'on cuando el nodo no es visitado ($y_{ik} = 0$).
             
-        \subsubsection{Restricciones de Propagaci\'on Temporal}
-            
+        \paragraph{Restricciones de Propagaci\'on Temporal.}
             \begin{equation}
             w_{jk} \geq w_{ik} + t_i + d_{ij} - M(1 - x_{ijk}) \quad \forall (i,j) \in A, \, k \in U \label{eq:time_prop}
             \end{equation}
-            
             La restricci\'on (\ref{eq:time_prop}) modela la propagaci\'on temporal a lo largo del viaje. Si el viajero $k$ utiliza el arco $(i,j)$ ($x_{ijk} = 1$), entonces el tiempo de inicio en el nodo $j$ debe ser al menos igual al tiempo de inicio en el nodo $i$, m\'as el tiempo de servicio en $i$ ($t_i$), m\'as el tiempo de viaje de $i$ a $j$ ($d_{ij}$). 
-            
             Cuando el arco no es utilizado ($x_{ijk} = 0$), la constante $M$ no utiliza la restricci\'on, de esta forma se pueden capturar los tiempos de espera impl\'icitos en casos de llegadas antes de la apertura del nodo.
             
-        \subsubsection{Restricci\'on de Duraci\'on Total del Tour}
-            
+        \paragraph{Restricci\'on de Duraci\'on Total del Tour.}
             \begin{equation}
             w_{1k} + \sum_{i \in V} t_i \cdot y_{ik} + \sum_{(i,j) \in A} d_{ij} \cdot x_{ijk} \leq T_k \quad \forall k \in U \label{eq:duration}
             \end{equation}
-            
             La restricci\'on (\ref{eq:duration}) indica que el tiempo total utilizado por el usuario $k$ no puede superar su l\'imite disponible $T_k$. Este tiempo total es obtenido considerando la suma del instante de retorno al dep\'osito ($w_{1k}$, que representa el inicio del servicio en el dep\'osito al finalizar el recorrido), junto con el tiempo total de servicio en los nodos visitados y el tiempo total de viaje en los arcos recorridos. Con esta restricci\'on se busca representar el presupuesto temporal del usuario y acotar la duraci\'on m\'axima de su recorrido.
             
-        \subsubsection{Restricciones de Eliminaci\'on de Subtours}
-            
+        \paragraph{Restricciones de Eliminaci\'on de Subtours.}
             \begin{align}
             u_{ik} - u_{jk} + n \cdot x_{ijk} &\leq n - 1 \quad \forall i,j \in V \setminus \{1\}, \, i \neq j, \, k \in U \label{eq:mtz}\\
             1 \leq u_{ik} &\leq n \quad \forall i \in V \setminus \{1\}, \, k \in U \label{eq:mtz_bounds}
             \end{align}
-            
             Las restricciones (\ref{eq:mtz}) y (\ref{eq:mtz_bounds}) corresponden a las desigualdades de Miller-Tucker-Zemlin~\cite{miller1960integer}, utilizadas para eliminar los viajes que no est\'en conectados con el nodo inicial. Las variables $u_{ik}$ representan las posiciones aproximadas de los nodos en la secuencia de visita del usuario $k$. En caso de que el arco $(i,j)$ sea utilizado ($x_{ijk} = 1$), se cumple que $u_{jk} \geq u_{ik} + 1$, garantizando que las posiciones aumenten de forma estrictamente creciente a lo largo del recorrido. Esta formulaci\'on, si bien no es la m\'as fuerte desde el punto de vista de la relajaci\'on lineal, presenta una estructura compacta y es ampliamente empleada en problemas de ruteo~\cite{desrochers1991improvements}.
 
     \subsection{Espacio de B\'usqueda}
-    
-        El espacio de b\'usqueda del problema est\'a conformado por todas las combinaciones posibles de valores para las variables de decisi\'on que cumplen con las restricciones definidas en el modelo. Una soluci\'on factible $\mathbf{s} = (\mathbf{x}, \mathbf{y}, \mathbf{w}, \mathbf{u})$ pertenece al conjunto de b\'usqueda $\mathcal{S}$ \'unicamente si satisface las restricciones (\ref{eq:start})-(\ref{eq:mtz_bounds}).
+
+        El espacio de b\'usqueda corresponde a todas las combinaciones posibles de las variables de decisi\'on que cumplen las restricciones del modelo. Una soluci\'on factible $\mathbf{s} = (\mathbf{x}, \mathbf{y}, \mathbf{w}, \mathbf{u})$ pertenece al conjunto $\mathcal{S}$ \'unicamente si satisface las restricciones (\ref{eq:start})--(\ref{eq:mtz_bounds}).
         
-        El tama\~{n}o de este espacio crece de forma exponencial con respecto al n\'umero de nodos y usuarios. Para cada usuario $k$, la cantidad de tours posibles desde el dep\'osito que consideran exactamente $p$ nodos (sin incluir el dep\'osito) est\'a acotada por $\binom{n-1}{p} \cdot p!$, correspondiente a todas las formas de seleccionar y ordenar esos nodos. Si se consideran todos los valores posibles de $p$ y la independencia entre las decisiones de distintos usuarios (respetando la restricci\'on de visita \'unica), el tama\~{n}o total del espacio aumenta factorialmente, evidenciando la alta complejidad computacional del problema~\cite{feillet2005traveling}.
+        El tama\~no de este espacio crece de manera exponencial con el n\'umero de nodos y usuarios. Para cada usuario $k$, el n\'umero de tours que considera exactamente $p$ nodos (excluyendo el dep\'osito) est\'a acotado por $\binom{n-1}{p} \cdot p!$, que representa todas las formas de seleccionar y ordenar dichos nodos. Al considerar todos los valores posibles de $p$ y la independencia entre usuarios —respetando la restricci\'on de visita \'unica— el tama\~no total del espacio aumenta factorialmente, evidenciando su elevada complejidad computacional~\cite{feillet2005traveling}.
         
-        A pesar de que las restricciones de ventanas de tiempo y duraci\'on limitan de manera considerable el conjunto de soluciones factibles, el problema contin\'ua siendo NP-dif\'icil incluso bajo estas condiciones adicionales~\cite{sun2018time}. Adem\'as, la estructura del espacio se caracteriza por la presencia de m\'ultiples \'optimos locales y regiones desconectadas debido a las restricciones temporales, lo que plantea un desaf\'io importante para el dise\~{n}o y desempe\~{n}o de m\'etodos de optimizaci\'on exactos y aproximados.
-                    
-    
+        Si bien las restricciones de ventanas de tiempo y duraci\'on reducen el conjunto de soluciones factibles, el problema contin\'ua siendo NP-dif\'icil aun bajo estas condiciones~\cite{sun2018time}. Adem\'as, la estructura del espacio presenta m\'ultiples \'optimos locales y regiones desconectadas producidas por las restricciones temporales, lo que dificulta el desempe\~no de m\'etodos exactos y heur\'isticos.
+
 
 \section{Conclusiones}
-    El estudio realizado permite la identificaci\'on de t\'ecnicas de soluci\'on para el EPTP, ya que si bien comparte un marco te\'orico com\'un del TSP cl\'asico~\cite{lawler1985traveling}, no encuentra la soluci\'on al mismo exacto problema. Se tienen diferencias considerables en las variantes que abordan los problemas, mientras que algunos enfoques se centran en el problema b\'asico sin las restricciones adicionales~\cite{feillet2005traveling}, otros incorporan capacidades vehiculares~\cite{archetti2009capacitated}, ventanas de tiempo~\cite{sun2018time} o incluso incertidumbre estoc\'astica en la disponibilidad de los nodos~~\cite{zhang2017probabilistic}. 
-    
+    El estudio permite la identificaci\'on de t\'ecnicas de soluci\'on para el EPTP, ya que si bien comparte un marco te\'orico com\'un del TSP cl\'asico~\cite{lawler1985traveling}, no encuentra la soluci\'on al mismo exacto problema. Con diferencias considerables en las variantes que abordan los problemas, mientras que algunos enfoques se centran en el problema b\'asico sin las restricciones adicionales~\cite{feillet2005traveling}, otros incorporan capacidades vehiculares~\cite{archetti2009capacitated}, ventanas de tiempo~\cite{sun2018time} o incluso incertidumbre estoc\'astica en la disponibilidad de los nodos~~\cite{zhang2017probabilistic}. 
     Esta diversidad en las restricciones de los problemas refleja la necesidad de adaptaci\'on que se da para las formulaciones en contextos aplicados espec\'ificos, donde las caracter\'isticas del mundo exigen extensiones del modelo base. 
     
     En tanto a las similitudes y diferencias entre las t\'ecnicas que ya existen, se identifican que todas comparten la estructura dual de decisi\'on, se deben decidir v\'ertices y secuenciamiento de visitas. Los m\'etodos exactos se basan en programaci\'on entera~\cite{dell1995prize} y Branch-Cut-And-Price~\cite{archetti2009capacitated} para aquellas instancias que tienen m\'as de 500 v\'ertices. 
     
-    Por otro lado las metaheur\'isticas como la b\'usqueda tab\'u~\cite{taillard1997tabu}, algoritmos gen\'eticos~\cite{dasari2021multi} y optimizaci\'on por colonia de hormigas~\cite{ke2008ants}, hacen un sacrificio en las garant\'ias de optimalidad a cambio de una mayor eficiencia computacional. La principal diferencia metodol\'ogica radica en el balance entre la calidad de la soluci\'on y el tiempo de c\'omputo, mientras que los enfoques de car\'acter hibrido que combinan metaheur\'isticas con b\'usqueda local han dado a demostrar que son superiores para aquellas instancias de gran escala ~\cite{dasari2021multi}, los m\'etodos exactos mantienen mayor relevancia para instancias moderadas donde la optimalidad es cr\'itica. 
-    \begin{itemize}
+    Por otro lado las metaheur\'isticas como la b\'usqueda tab\'u~\cite{taillard1997tabu} o algoritmos gen\'eticos~\cite{dasari2021multi} hacen un sacrificio en las garant\'ias de optimalidad a cambio de mayor eficiencia. La principal diferencia metodol\'ogica radica en el balance entre la calidad de la soluci\'on y el tiempo de c\'omputo, mientras que los enfoques de car\'acter hibrido que combinan metaheur\'isticas con b\'usqueda local han dado a demostrar que son superiores para aquellas instancias de gran escala ~\cite{dasari2021multi}, los m\'etodos exactos mantienen mayor relevancia para instancias moderadas donde la optimalidad es cr\'itica. 
+    \begin{itemize} \setlength{\itemsep}{0pt} \setlength{\parskip}{0pt}
         \item Las t\'ecnicas se ven limitadas debido a:
         \item La sensibilidad de las metaheur\'isticas por la configuraci\'on de los par\'ametros.
         \item La dificultad para escalar a instancias con miles de v\'ertices manteniendo la calidad.
         \item La ausencia de m\'etodos sistem\'aticos que exploten la informaci\'on hist\'orica de problemas que ya han sido resueltos.
     \end{itemize}
     
-    Adem\'as se tienen las formulaciones estoc\'asticas~~\cite{zhang2017probabilistic} que aunque son m\'as realistas, incrementan sustancialmente la complejidad computacional y requieren informaci\'on probabilista que no siempre est\'a disponible en aplicaciones pr\'acticas. 
-    
-    Aquellas t\'ecnicas que son m\'as prometedoras son aquellos algoritmos h\'ibridos que integran m\'ultiples paradigmas de optimizaci\'on. En particular, la combinaci\'on de heur\'isticas multi-inicio con b\'usqueda tab\'u, esta combinaci\'on ha logrado brechas inferiores al 2\% en cuando a optimalidad respecta, considerando instancias de 500 v\'ertices~\cite{dasari2021multi}. As\'i mismo la integraci\'on emergente de t\'ecnicas de aprendizaje autom\'atico gu\'ia la b\'usqueda y paralelizaci\'on masiva mediante la integraci\'on de computaci\'on de alto rendimiento, representando direcciones altamente promisorias. 
-    
-    El trabajo a futuro en esta \'area de la investigaci\'on es una necesidad, debido al requerimiento de desarrollo de algoritmos adaptativos que se ajusten din\'amicamente con estrategias de b\'usqueda seg\'un las caracter\'isticas de la instancia, la exploraci\'on de formulaciones multiobjetivo~\cite{jozefowiez2008multi} que consideren de forma simult\'anea criterios econ\'omicos, ambientales y sociales, y tambi\'en la incorporaci\'on de aspectos din\'amicos donde el problema evoluciona temporalmente requiriendo una re-optimizaci\'on continua. Tambi\'en se debe tener en consideraci\'on la validaci\'on emp\'irica de las soluciones en contextos reales de log\'istica y turismo, permaneciendo como un \'area poco explorada que permitir\'ia cerrar la brecha entre teor\'ia y pr\'actica.
-    
-    Como lineamientos para posibles futuras investigaciones se sugiere: 
-    \begin{enumerate}
-        \item Desarrollo de frameworks de aprendizaje por refuerzo que aprendan pol\'iticas de construcci\'on de soluciones a partir de instancias resultas previamente.
-        \item Dise\~{n}o de algoritmos que incorporen conocimiento espec\'ifico del dominio mediante operadores de b\'usqueda local especializados.
-        \item Investigaci\'on de f\'ormulas que garanticen factibilidad bajo incertidumbre param\'etrica sin incremento del costo computacional.
-        \item Exploraci\'on de aplicaci\'on de t\'ecnicas de descomposici\'on que dividan el problema en subproblemas m\'as tratables, particularmente para los casos con m\'ultiples veh\'iculos.
-    \end{enumerate}
-    
-    La integraci\'on de dichas soluciones podr\'ia generar soluciones mas eficientes para las aplicaciones pr\'acticas del EPTP.
+    Adem\'as, se consideran formulaciones estoc\'asticas~\cite{zhang2017probabilistic} que, si bien resultan m\'as realistas, incrementan notablemente la complejidad computacional y requieren informaci\'on probabilista que no siempre est\'a disponible en aplicaciones reales.
+
+Las t\'ecnicas m\'as prometedoras corresponden a algoritmos h\'ibridos que integran distintos paradigmas de optimizaci\'on. En particular, la combinaci\'on de heur\'isticas multi-inicio con b\'usqueda tab\'u ha logrado brechas inferiores al 2\% en instancias de 500 v\'ertices~\cite{dasari2021multi}. De igual forma, la incorporaci\'on de aprendizaje autom\'atico para guiar la b\'usqueda, junto con esquemas de paralelizaci\'on sobre arquitecturas de alto rendimiento, representa una direcci\'on especialmente prometedora.
+
+El trabajo futuro en esta \'area es necesario para desarrollar algoritmos adaptativos que ajusten din\'amicamente sus estrategias de b\'usqueda seg\'un la instancia, explorar formulaciones multiobjetivo~\cite{jozefowiez2008multi} que equilibren criterios econ\'omicos, ambientales y sociales, e incorporar escenarios din\'amicos donde el problema evoluciona temporalmente y requiere re-optimizaci\'on continua. Tambi\'en resulta fundamental la validaci\'on emp\'irica en contextos reales de log\'istica y turismo, un aspecto poco explorado que permitir\'ia cerrar la brecha entre teor\'ia y pr\'actica.
+
+Como lineamientos de investigaci\'on futura, se sugiere:
+\begin{enumerate} \setlength{\itemsep}{0pt} \setlength{\parskip}{0pt}
+    \item Desarrollo de \textit{frameworks} de aprendizaje por refuerzo que aprendan pol\'iticas de construcci\'on a partir de instancias previamente resueltas.
+    \item Dise\~{n}o de algoritmos que incorporen conocimiento espec\'ifico del dominio mediante operadores de b\'usqueda local especializados.
+    \item Estudio de formulaciones que garanticen factibilidad bajo incertidumbre sin aumentar excesivamente el costo computacional.
+    \item Exploraci\'on de t\'ecnicas de descomposici\'on que dividan el problema en subproblemas tratables, especialmente para escenarios con m\'ultiples veh\'iculos.
+\end{enumerate}
+
+La integraci\'on de estas l\'ineas de trabajo podr\'ia conducir a soluciones m\'as eficientes y aplicables en escenarios reales del EPTP.
+
 
 
 \bibliographystyle{plain}
 \bibliography{Referencias}
 
 
-\end{document} 
+\end{document}
