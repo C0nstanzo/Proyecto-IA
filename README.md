@@ -10,7 +10,7 @@
   - `Instancias/` : Carpetas con archivos de entrada.  
     - `nodos/` : Instancias relacionadas con los nodos.
     - `usuarios/` : Instancias relacionadas con usuarios.
-- `Entrega 2/` : Material de la primera entrega (LaTeX e informe).
+- `Entrega 2/` : Material de la segunda entrega (LaTeX e informe).
 ### Compilación
 
 Para la compilación se recomienda utilizar el archivo `Makefile` con el comando make
